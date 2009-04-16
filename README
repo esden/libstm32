@@ -1,0 +1,17 @@
+Configuration
+-------------
+To configure the stm32 firmware library just edit conf.h
+
+Installation
+------------
+
+Just run:
+> make
+> make install
+
+The default gcc toolchain is arm-none-eabi, and default install directory is
+/usr/local. If you want to use a different settings you can use the prefix and arch_prefix
+variables. For example:
+
+> prefix=/usr/mydir arch_prefix=arm-elf make
+> prefix=/usr/mydir arch_prefix=arm-elf make install
