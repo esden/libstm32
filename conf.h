@@ -1,5 +1,5 @@
 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
-* File Name          : stm32f10x_conf.h
+* File Name          : stm32/conf.h
 * Author             : MCD Application Team
 * Version            : V2.0.3
 * Date               : 09/22/2008
@@ -14,11 +14,11 @@
 *******************************************************************************/
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F10x_CONF_H
-#define __STM32F10x_CONF_H
+#ifndef __STM32_CONF_H
+#define __STM32_CONF_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x/type.h"
+#include "stm32/type.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
@@ -169,6 +169,6 @@
   #define assert_param(expr) ((void)0)
 #endif /* DEBUG */
 
-#endif /* __STM32F10x_CONF_H */
+#endif /* __STM32_CONF_H */
 
 /******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/

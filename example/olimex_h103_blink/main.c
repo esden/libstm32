@@ -20,11 +20,11 @@
  * THE SOFTWARE.
  */
 
-#include <stm32f10x/lib.h>
-#include <stm32f10x/map.h>
-#include <stm32f10x/rcc.h>
-#include <stm32f10x/gpio.h>
-#include <stm32f10x/usart.h>
+#include <stm32/lib.h>
+#include <stm32/map.h>
+#include <stm32/rcc.h>
+#include <stm32/gpio.h>
+#include <stm32/usart.h>
 
 #define STACK_TOP 0x20000800
 #define NVIC_CCR ((volatile unsigned long *)(0xE000ED14))

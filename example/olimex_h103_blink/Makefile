@@ -50,7 +50,7 @@ images: $(NAME).out
 
 $(NAME).out: main.o $(NAME).cmd 
 	@ echo "..linking"
-	$(LD) $(LFLAGS) -o $(NAME).out main.o -lstm32f10x
+	$(LD) $(LFLAGS) -o $(NAME).out main.o -lstm32
 
 main.o: main.c
 	@ echo ".compiling"

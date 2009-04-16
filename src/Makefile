@@ -37,9 +37,9 @@ objects= stm32f10x_adc.o   stm32f10x_bkp.o  stm32f10x_dbgmcu.o \
 	 stm32f10x_flash.o stm32f10x_iwdg.o stm32f10x_rcc.o \
 	 stm32f10x_systick.o
 
-all: libstm32f10x.a
+all: libstm32.a
 
-libstm32f10x.a: ${objects}
+libstm32.a: ${objects}
 	${AR} ${ARFLAGS} $@ $^
 
 clean:
