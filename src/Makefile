@@ -27,7 +27,7 @@ AR=${compiler_prefix}ar
 AS=${compiler_prefix}as
 CFLAGS=-I../include -fno-common -Os -g -mcpu=cortex-m3 -mthumb
 ARFLAGS=rcsv
-AFLAGS=-ahls -mapcs-32
+ASFLAGS=-ahls -mapcs-32
 
 objects= stm32_adc.o   stm32_bkp.o  stm32_dbgmcu.o \
          stm32_fsmc.o  stm32_lib.o  stm32_rtc.o \
