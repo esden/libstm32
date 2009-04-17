@@ -1,5 +1,5 @@
 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
-* File Name          : stm32f10x_nvic.c
+* File Name          : stm32_nvic.c
 * Author             : MCD Application Team
 * Version            : V2.0.3
 * Date               : 09/22/2008

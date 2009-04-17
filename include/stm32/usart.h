@@ -1,5 +1,5 @@
 /******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
-* File Name          : stm32f10x/usart.h
+* File Name          : stm32/usart.h
 * Author             : MCD Application Team
 * Version            : V2.0.3
 * Date               : 09/22/2008
@@ -19,7 +19,7 @@
 #define __STM32_USART_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f10x/map.h"
+#include "stm32/map.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* USART Init Structure definition */

@@ -32,6 +32,6 @@ clean:
 	make -C src clean
 
 install:
-	install -d ${install_dir}/include/stm32f10x
-	install -C include/stm32f10x/*.h ${install_dir}/include/stm32f10x
-	install -C src/libstm32f10x.a ${install_dir}/lib
+	install -d ${install_dir}/include/stm32
+	install -C include/stm32/*.h ${install_dir}/include/stm32
+	install -C src/libstm32.a ${install_dir}/lib

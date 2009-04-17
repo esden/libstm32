@@ -27,15 +27,15 @@ AR=${compiler_prefix}ar
 CFLAGS=-I../include -fno-common -Os -g -mcpu=cortex-m3 -mthumb
 ARFLAGS=rcsv
 
-objects= stm32f10x_adc.o   stm32f10x_bkp.o  stm32f10x_dbgmcu.o \
-         stm32f10x_fsmc.o  stm32f10x_lib.o  stm32f10x_rtc.o \
-	 stm32f10x_tim.o   stm32f10x_can.o  stm32f10x_dma.o \
-	 stm32f10x_gpio.o  stm32f10x_nvic.o stm32f10x_sdio.o \
-	 stm32f10x_usart.o stm32f10x_adc.o  stm32f10x_crc.o \
-	 stm32f10x_exti.o  stm32f10x_i2c.o  stm32f10x_pwr.o \
-	 stm32f10x_spi.o   stm32f10x_wwdg.o stm32f10x_dac.o \
-	 stm32f10x_flash.o stm32f10x_iwdg.o stm32f10x_rcc.o \
-	 stm32f10x_systick.o
+objects= stm32_adc.o   stm32_bkp.o  stm32_dbgmcu.o \
+         stm32_fsmc.o  stm32_lib.o  stm32_rtc.o \
+	 stm32_tim.o   stm32_can.o  stm32_dma.o \
+	 stm32_gpio.o  stm32_nvic.o stm32_sdio.o \
+	 stm32_usart.o stm32_adc.o  stm32_crc.o \
+	 stm32_exti.o  stm32_i2c.o  stm32_pwr.o \
+	 stm32_spi.o   stm32_wwdg.o stm32_dac.o \
+	 stm32_flash.o stm32_iwdg.o stm32_rcc.o \
+	 stm32_systick.o
 
 all: libstm32.a
 
