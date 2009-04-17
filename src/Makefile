@@ -24,8 +24,10 @@ arch_prefix?=arm-none-eabi
 compiler_prefix?=${arch_prefix}-
 CC=${compiler_prefix}gcc
 AR=${compiler_prefix}ar
+AS=${compiler_prefix}as
 CFLAGS=-I../include -fno-common -Os -g -mcpu=cortex-m3 -mthumb
 ARFLAGS=rcsv
+AFLAGS=-ahls -mapcs-32
 
 objects= stm32_adc.o   stm32_bkp.o  stm32_dbgmcu.o \
          stm32_fsmc.o  stm32_lib.o  stm32_rtc.o \
@@ -35,7 +37,7 @@ objects= stm32_adc.o   stm32_bkp.o  stm32_dbgmcu.o \
 	 stm32_exti.o  stm32_i2c.o  stm32_pwr.o \
 	 stm32_spi.o   stm32_wwdg.o stm32_dac.o \
 	 stm32_flash.o stm32_iwdg.o stm32_rcc.o \
-	 stm32_systick.o
+	 stm32_systick.o cortexm3_macro.o
 
 all: libstm32.a
 
