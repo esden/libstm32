@@ -1,8 +1,8 @@
-/******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+/******************** (C) COPYRIGHT 2009 STMicroelectronics ********************
 * File Name          : stm32_tim.c
 * Author             : MCD Application Team
-* Version            : V2.0.3
-* Date               : 09/22/2008
+* Version            : V2.0.3Patch1
+* Date               : 04/06/2009
 * Description        : This file provides all the TIM firmware functions.
 ********************************************************************************
 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
@@ -212,14 +212,14 @@ void TIM_TimeBaseInit(TIM_TypeDef* TIMx, TIM_TimeBaseInitTypeDef* TIM_TimeBaseIn
   /* Set the Prescaler value */
   TIMx->PSC = TIM_TimeBaseInitStruct->TIM_Prescaler;
 
-  /* Generate an update event to reload the Prescaler value immediatly */
-  TIMx->EGR = TIM_PSCReloadMode_Immediate;
-    
   if (((*(u32*)&TIMx) == TIM1_BASE) || ((*(u32*)&TIMx) == TIM8_BASE))  
   {
     /* Set the Repetition Counter value */
     TIMx->RCR = TIM_TimeBaseInitStruct->TIM_RepetitionCounter;
-  }        
+  }
+
+  /* Generate an update event to reload the Prescaler value immediatly */
+  TIMx->EGR = TIM_PSCReloadMode_Immediate;
 }
 
 /*******************************************************************************
@@ -3216,4 +3216,4 @@ static void TI4_Config(TIM_TypeDef* TIMx, u16 TIM_ICPolarity, u16 TIM_ICSelectio
   TIMx->CCER = tmpccer ;
 }
 
-/******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+/******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/

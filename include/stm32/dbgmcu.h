@@ -1,8 +1,8 @@
-/******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+/******************** (C) COPYRIGHT 2009 STMicroelectronics ********************
 * File Name          : stm32/dbgmcu.h
 * Author             : MCD Application Team
-* Version            : V2.0.3
-* Date               : 09/22/2008
+* Version            : V2.0.3Patch1
+* Date               : 04/06/2009
 * Description        : This file contains all the functions prototypes for the
 *                      DBGMCU firmware library.
 ********************************************************************************
@@ -35,11 +35,11 @@
 #define DBGMCU_CAN_STOP              ((u32)0x00004000)
 #define DBGMCU_I2C1_SMBUS_TIMEOUT    ((u32)0x00008000)
 #define DBGMCU_I2C2_SMBUS_TIMEOUT    ((u32)0x00010000)
-#define DBGMCU_TIM5_STOP             ((u32)0x00020000)
-#define DBGMCU_TIM6_STOP             ((u32)0x00040000)
-#define DBGMCU_TIM7_STOP             ((u32)0x00080000)
-#define DBGMCU_TIM8_STOP             ((u32)0x00100000)
-                                           
+#define DBGMCU_TIM8_STOP             ((u32)0x00020000)
+#define DBGMCU_TIM5_STOP             ((u32)0x00040000)
+#define DBGMCU_TIM6_STOP             ((u32)0x00080000)
+#define DBGMCU_TIM7_STOP             ((u32)0x00100000)
+
 #define IS_DBGMCU_PERIPH(PERIPH) ((((PERIPH) & 0xFFE000F8) == 0x00) && ((PERIPH) != 0x00))
 
 /* Exported macro ------------------------------------------------------------*/
@@ -50,6 +50,6 @@ void DBGMCU_Config(u32 DBGMCU_Periph, FunctionalState NewState);
 
 #endif /* __STM32_DBGMCU_H */
 
-/******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+/******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/
 
 

@@ -1,8 +1,8 @@
-/******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+/******************** (C) COPYRIGHT 2009 STMicroelectronics ********************
 * File Name          : stm32/fsmc.h
 * Author             : MCD Application Team
-* Version            : V2.0.3
-* Date               : 09/22/2008
+* Version            : V2.0.3Patch1
+* Date               : 04/06/2009
 * Description        : This file contains all the functions prototypes for the
 *                      FSMC firmware library.
 ********************************************************************************
@@ -72,7 +72,6 @@ typedef struct
   u32 FSMC_MemoryDataWidth;
   u32 FSMC_ECC;
   u32 FSMC_ECCPageSize;
-  u32 FSMC_AddressLowMapping;
   u32 FSMC_TCLRSetupTime;
   u32 FSMC_TARSetupTime;
   /* FSMC Common Space Timing */
@@ -85,7 +84,6 @@ typedef struct
 typedef struct
 {
   u32 FSMC_Waitfeature;
-  u32 FSMC_AddressLowMapping;
   u32 FSMC_TCLRSetupTime;
   u32 FSMC_TARSetupTime;
   /* FSMC Common Space Timing */
@@ -271,12 +269,6 @@ typedef struct
                                     ((SIZE) == FSMC_ECCPageSize_4096Bytes) || \
                                     ((SIZE) == FSMC_ECCPageSize_8192Bytes))
                                                               
-/* FSMC Address Low Mapping --------------------------------------------------*/
-#define FSMC_AddressLowMapping_Direct                   ((u32)0x00000000)
-#define FSMC_AddressLowMapping_InDirect                 ((u32)0x00000100)
-
-#define IS_FSMC_ADDRESS_LOW_MAPPING(MAPPING) (((MAPPING) == FSMC_AddressLowMapping_Direct) || \
-                                              ((MAPPING) == FSMC_AddressLowMapping_InDirect))
 /* FSMC TCLR Setup Time ------------------------------------------------------*/
 #define IS_FSMC_TCLR_TIME(TIME) ((TIME) <= 0xFF)
 
@@ -342,4 +334,4 @@ void FSMC_ClearITPendingBit(u32 FSMC_Bank, u32 FSMC_IT);
 
 #endif /*__STM32_FSMC_H */
 
-/******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+/******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/

@@ -1,8 +1,8 @@
-/******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+/******************** (C) COPYRIGHT 2009 STMicroelectronics ********************
 * File Name          : stm32_fsmc.c
 * Author             : MCD Application Team
-* Version            : V2.0.3
-* Date               : 09/22/2008
+* Version            : V2.0.3Patch1
+* Date               : 04/06/2009
 * Description        : This file provides all the FSMC firmware functions.
 ********************************************************************************
 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
@@ -231,7 +231,6 @@ void FSMC_NANDInit(FSMC_NANDInitTypeDef* FSMC_NANDInitStruct)
   assert_param( IS_FSMC_DATA_WIDTH(FSMC_NANDInitStruct->FSMC_MemoryDataWidth));
   assert_param( IS_FSMC_ECC_STATE(FSMC_NANDInitStruct->FSMC_ECC));
   assert_param( IS_FSMC_ECCPAGE_SIZE(FSMC_NANDInitStruct->FSMC_ECCPageSize));
-  assert_param( IS_FSMC_ADDRESS_LOW_MAPPING(FSMC_NANDInitStruct->FSMC_AddressLowMapping));
   assert_param( IS_FSMC_TCLR_TIME(FSMC_NANDInitStruct->FSMC_TCLRSetupTime));
   assert_param( IS_FSMC_TAR_TIME(FSMC_NANDInitStruct->FSMC_TARSetupTime));
 
@@ -251,7 +250,6 @@ void FSMC_NANDInit(FSMC_NANDInitTypeDef* FSMC_NANDInitStruct)
             FSMC_NANDInitStruct->FSMC_MemoryDataWidth |
             FSMC_NANDInitStruct->FSMC_ECC |
             FSMC_NANDInitStruct->FSMC_ECCPageSize |
-            FSMC_NANDInitStruct->FSMC_AddressLowMapping |
             (FSMC_NANDInitStruct->FSMC_TCLRSetupTime << 9 )|
             (FSMC_NANDInitStruct->FSMC_TARSetupTime << 13);
             
@@ -297,7 +295,6 @@ void FSMC_PCCARDInit(FSMC_PCCARDInitTypeDef* FSMC_PCCARDInitStruct)
 {
   /* Check the parameters */
   assert_param(IS_FSMC_WAIT_FEATURE(FSMC_PCCARDInitStruct->FSMC_Waitfeature));
-  assert_param(IS_FSMC_ADDRESS_LOW_MAPPING(FSMC_PCCARDInitStruct->FSMC_AddressLowMapping));
   assert_param(IS_FSMC_TCLR_TIME(FSMC_PCCARDInitStruct->FSMC_TCLRSetupTime));
   assert_param(IS_FSMC_TAR_TIME(FSMC_PCCARDInitStruct->FSMC_TARSetupTime));
 
@@ -320,7 +317,6 @@ void FSMC_PCCARDInit(FSMC_PCCARDInitTypeDef* FSMC_PCCARDInitStruct)
   /* Set the PCR4 register value according to FSMC_PCCARDInitStruct parameters */
   FSMC_Bank4->PCR4 = (u32)FSMC_PCCARDInitStruct->FSMC_Waitfeature |
                      FSMC_MemoryDataWidth_16b |  
-                     FSMC_PCCARDInitStruct->FSMC_AddressLowMapping |
                      (FSMC_PCCARDInitStruct->FSMC_TCLRSetupTime << 9) |
                      (FSMC_PCCARDInitStruct->FSMC_TARSetupTime << 13);
             
@@ -398,7 +394,6 @@ void FSMC_NANDStructInit(FSMC_NANDInitTypeDef* FSMC_NANDInitStruct)
   FSMC_NANDInitStruct->FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_8b;
   FSMC_NANDInitStruct->FSMC_ECC = FSMC_ECC_Disable;
   FSMC_NANDInitStruct->FSMC_ECCPageSize = FSMC_ECCPageSize_256Bytes;
-  FSMC_NANDInitStruct->FSMC_AddressLowMapping = FSMC_AddressLowMapping_Direct;
   FSMC_NANDInitStruct->FSMC_TCLRSetupTime = 0x0;
   FSMC_NANDInitStruct->FSMC_TARSetupTime = 0x0;
   FSMC_NANDInitStruct->FSMC_CommonSpaceTimingStruct->FSMC_SetupTime = 0xFC;
@@ -423,7 +418,6 @@ void FSMC_PCCARDStructInit(FSMC_PCCARDInitTypeDef* FSMC_PCCARDInitStruct)
 {
   /* Reset PCCARD Init structure parameters values */
   FSMC_PCCARDInitStruct->FSMC_Waitfeature = FSMC_Waitfeature_Disable;
-  FSMC_PCCARDInitStruct->FSMC_AddressLowMapping = FSMC_AddressLowMapping_Direct;
   FSMC_PCCARDInitStruct->FSMC_TCLRSetupTime = 0x0;
   FSMC_PCCARDInitStruct->FSMC_TARSetupTime = 0x0;
   FSMC_PCCARDInitStruct->FSMC_CommonSpaceTimingStruct->FSMC_SetupTime = 0xFC;
@@ -854,4 +848,4 @@ void FSMC_ClearITPendingBit(u32 FSMC_Bank, u32 FSMC_IT)
   }
 }
 
-/******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+/******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/

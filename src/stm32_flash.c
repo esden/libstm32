@@ -1,8 +1,8 @@
-/******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+/******************** (C) COPYRIGHT 2009 STMicroelectronics ********************
 * File Name          : stm32_flash.c
 * Author             : MCD Application Team
-* Version            : V2.0.3
-* Date               : 09/22/2008
+* Version            : V2.0.3Patch1
+* Date               : 04/06/2009
 * Description        : This file provides all the FLASH firmware functions.
 ********************************************************************************
 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
@@ -85,12 +85,20 @@ static void delay(void);
 *******************************************************************************/
 void FLASH_SetLatency(u32 FLASH_Latency)
 {
+  u32 tmpreg = 0;
+
   /* Check the parameters */
   assert_param(IS_FLASH_LATENCY(FLASH_Latency));
-  
+
+  /* Read the ACR register */
+  tmpreg = FLASH->ACR;ÿ
+
   /* Sets the Latency value */
-  FLASH->ACR &= ACR_LATENCY_Mask;
-  FLASH->ACR |= FLASH_Latency;
+  tmpreg &= ACR_LATENCY_Mask;
+  tmpreg |= FLASH_Latency;
+
+  /* Write the ACR register */
+  FLASH->ACR = tmpreg;
 }
 
 /*******************************************************************************
@@ -908,4 +916,4 @@ static void delay(void)
 }
 #endif
 
-/******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+/******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/

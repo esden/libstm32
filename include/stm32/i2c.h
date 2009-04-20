@@ -1,8 +1,8 @@
-/******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+/******************** (C) COPYRIGHT 2009 STMicroelectronics ********************
 * File Name          : stm32/i2c.h
 * Author             : MCD Application Team
-* Version            : V2.0.3
-* Date               : 09/22/2008
+* Version            : V2.0.3Patch1
+* Date               : 04/06/2009
 * Description        : This file contains all the functions prototypes for the
 *                      I2C firmware library.
 ********************************************************************************
@@ -236,6 +236,7 @@ typedef struct
                              ((EVENT) == I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED) || \
                              ((EVENT) == I2C_EVENT_MASTER_BYTE_RECEIVED) || \
                              ((EVENT) == I2C_EVENT_MASTER_BYTE_TRANSMITTED) || \
+                             ((EVENT) == I2C_EVENT_MASTER_BYTE_TRANSMITTING) || \
                              ((EVENT) == I2C_EVENT_MASTER_MODE_ADDRESS10) || \
                              ((EVENT) == I2C_EVENT_SLAVE_ACK_FAILURE))
 
@@ -281,4 +282,4 @@ void I2C_ClearITPendingBit(I2C_TypeDef* I2Cx, u32 I2C_IT);
 
 #endif /*__STM32_I2C_H */
 
-/******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+/******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/

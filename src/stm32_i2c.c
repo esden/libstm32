@@ -1,8 +1,8 @@
-/******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+/******************** (C) COPYRIGHT 2009 STMicroelectronics ********************
 * File Name          : stm32_i2c.c
 * Author             : MCD Application Team
-* Version            : V2.0.3
-* Date               : 09/22/2008
+* Version            : V2.0.3Patch1
+* Date               : 04/06/2009
 * Description        : This file provides all the I2C firmware functions.
 ********************************************************************************
 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
@@ -1006,7 +1006,7 @@ ErrorStatus I2C_CheckEvent(I2C_TypeDef* I2Cx, u32 I2C_EVENT)
 FlagStatus I2C_GetFlagStatus(I2C_TypeDef* I2Cx, u32 I2C_FLAG)
 {
   FlagStatus bitstatus = RESET;
-  u32 i2creg = 0, i2cxbase = 0;
+  vu32 i2creg = 0, i2cxbase = 0;
 
   /* Check the parameters */
   assert_param(IS_I2C_ALL_PERIPH(I2Cx));
@@ -1213,4 +1213,4 @@ void I2C_ClearITPendingBit(I2C_TypeDef* I2Cx, u32 I2C_IT)
   I2Cx->SR1 = (u16)~flagpos;
 }
 
-/******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+/******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/
