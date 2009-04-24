@@ -25,7 +25,7 @@ compiler_prefix?=${arch_prefix}-
 CC=${compiler_prefix}gcc
 AR=${compiler_prefix}ar
 AS=${compiler_prefix}as
-CFLAGS=-I../include -fno-common -Os -g -mcpu=cortex-m3 -mthumb
+CFLAGS=-I../include -fno-common -Os -g -mcpu=cortex-m3 -mthumb -ffunction-sections -fdata-sections
 ARFLAGS=rcsv
 ASFLAGS=-ahls -mapcs-32
 
