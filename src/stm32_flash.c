@@ -91,7 +91,7 @@ void FLASH_SetLatency(u32 FLASH_Latency)
   assert_param(IS_FLASH_LATENCY(FLASH_Latency));
 
   /* Read the ACR register */
-  tmpreg = FLASH->ACR;ÿ
+  tmpreg = FLASH->ACR;
 
   /* Sets the Latency value */
   tmpreg &= ACR_LATENCY_Mask;
