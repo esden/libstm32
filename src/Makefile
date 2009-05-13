@@ -29,15 +29,14 @@ CFLAGS=-I../include -fno-common -Os -g -mcpu=cortex-m3 -mthumb -ffunction-sectio
 ARFLAGS=rcsv
 ASFLAGS=-ahls -mapcs-32
 
-objects= stm32_adc.o   stm32_bkp.o  stm32_dbgmcu.o \
-         stm32_fsmc.o  stm32_lib.o  stm32_rtc.o \
-	 stm32_tim.o   stm32_can.o  stm32_dma.o \
-	 stm32_gpio.o  stm32_nvic.o stm32_sdio.o \
-	 stm32_usart.o stm32_adc.o  stm32_crc.o \
-	 stm32_exti.o  stm32_i2c.o  stm32_pwr.o \
-	 stm32_spi.o   stm32_wwdg.o stm32_dac.o \
-	 stm32_flash.o stm32_iwdg.o stm32_rcc.o \
-	 stm32_systick.o cortexm3_macro.o
+objects= stm32_adc.o   stm32_bkp.o   stm32_dbgmcu.o \
+         stm32_fsmc.o  stm32_rtc.o   stm32_tim.o \
+	 stm32_can.o   stm32_dma.o   stm32_gpio.o \
+	 stm32_sdio.o  stm32_usart.o stm32_adc.o \
+	 stm32_crc.o   stm32_exti.o  stm32_i2c.o \
+	 stm32_pwr.o   stm32_spi.o   stm32_wwdg.o \
+	 stm32_dac.o   stm32_flash.o stm32_iwdg.o \
+	 stm32_rcc.o   stm32_misc.o
 
 all: libstm32.a
 
