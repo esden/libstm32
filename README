@@ -1,3 +1,7 @@
+This repository is extremely out of date. DO NOT USE!!! :D
+
+Consider using libopencm3 instead: https://github.com/libopencm3/libopencm3
+
 Configuration
 -------------
 To configure the stm32 firmware library just edit conf.h
